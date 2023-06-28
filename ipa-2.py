@@ -188,16 +188,16 @@ def vigenere_cipher(message, key):
                  'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
                  'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
 
-    key_extend = key * (len(message) // len(key)) + key[:len(message) % len(key)]
+    Key_Extend = key * (len(message) // len(key)) + key[:len(message) % len(key)]
 
     Encrypted_Msg = ""
     for V in range(len(message)):
         if message[V] == ' ':
             encrypted_message += ' '
         else:
-            letter_index = MY_DICTIO[message[V]]
-            key_index = MY_DICTIO[key_extend[V]]
-            Shifted_Index = (letter_index + key_index) % 26
+            Letter_Index = MY_DICTIO[message[V]]
+            Key_Index = MY_DICTIO[Key_Extend[V]]
+            Shifted_Index = (Letter_Index + Key_Index) % 26
             Shifted_Letter = list(MY_DICTIO.keys())[list(MY_DICTIO.values()).index(Shifted_Index)]
             Encrypted_Msg += Shifted_Letter
 
