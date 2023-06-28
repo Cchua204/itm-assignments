@@ -37,7 +37,30 @@ def shift_letter(letter, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    if letter == ' ':
+        return ' '
+    else:
+            MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                   'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                   'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+        
+    letter_amount = len(MY_DICTIO)
+
+    Original_Value = None
+    for key, value in MY_DICTIO.items():
+            if key == letter:
+                original_value = value
+                break
+
+    Shifted_Value = (shift + Original_Value) % letter_amount
+
+    Letter = None
+    for key, value in MY_DICTIO.items():
+            if value == Shifted_Value:
+                Letter = key
+                break
+
+    return str(Letter)
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher.
@@ -59,7 +82,22 @@ def caesar_cipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                 'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+
+    Hidden_Msg = ""
+    for Letter in message:
+        if Letter in MY_DICTIO:
+            index = MY_DICTIO[Letter]
+            Shifted_Index = (shift + index) % 26
+            Hidden_Letter = list(MY_DICTIO.keys())[list(MY_DICTIO.values()).index(Shifted_Index)]
+            Hidden_Msg += Hidden_Letter
+        else:
+            Hidden_Msg += Letter
+
+    return str(Hidden_Msg)
 
 def shift_by_letter(letter, letter_shift):
     '''Shift By Letter.
@@ -89,7 +127,29 @@ def shift_by_letter(letter, letter_shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+   
+    MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                 'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+
+    if letter == ' ':
+        return ' '
+    Shift_Num = MY_DICTIO[letter_shift]
+
+    for key, value in MY_DICTIO.items():
+        if value == Shift_Num:
+            Shifted_Letter = key
+            break
+
+    Letter_Num = MY_DICTIO[letter]
+    Shifted_Num = (Shift_Num + Letter_Num) % 26
+
+    for key, value in MY_DICTIO.items():
+        if value == Shifted_Num:
+            Shifted_Letter = key
+            break
+
+    return Shifted_Letter
 
 def vigenere_cipher(message, key):
     '''Vigenere Cipher.
@@ -122,7 +182,25 @@ def vigenere_cipher(message, key):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+    
+    MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                 'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+
+    key_extend = key * (len(message) // len(key)) + key[:len(message) % len(key)]
+
+    Encrypted_Msg = ""
+    for V in range(len(message)):
+        if message[V] == ' ':
+            encrypted_message += ' '
+        else:
+            letter_index = MY_DICTIO[message[V]]
+            key_index = MY_DICTIO[key_extend[V]]
+            Shifted_Index = (letter_index + key_index) % 26
+            Shifted_Letter = list(MY_DICTIO.keys())[list(MY_DICTIO.values()).index(Shifted_Index)]
+            Encrypted_Msg += Shifted_Letter
+
+    return Encrypted_Msg
 
 def scytale_cipher(message, shift):
     '''Scytale Cipher.
@@ -176,7 +254,22 @@ def scytale_cipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+
+    MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                 'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+
+    Remainder = len(message) % shift
+    if Remainder != 0:
+        message += "_" * (shift - Remainder)
+
+    ENCODED = ''
+    for i in range(len(message)):
+        index = (i // shift) + (len(message) // shift) * (i % shift)
+        ENCODED += message[index]
+
+    return str(ENCODED)
+
 
 def scytale_decipher(message, shift):
     '''Scytale De-cipher.
@@ -205,4 +298,14 @@ def scytale_decipher(message, shift):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-    pass
+
+    MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
+                 'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
+                 'T': 19, 'U': 20, 'V': 21, 'W': 22, 'X': 23, 'Y': 24, 'Z': 25}
+
+    DECODED = ''
+    for i in range(len(message)):
+        index = (i // (len(message) // shift)) + (i % (len(message) // shift)) * shift
+        DECODED += message[index]
+
+    return str(DECODED.replace('_', '_'))
