@@ -301,9 +301,9 @@ def scytale_decipher(message, shift):
     Col_Amt = shift
     Row_Amt = Msg_Len // shift
 
-    for col in range(Col_Amt):
+    for column in range(Col_Amt):
         for row in range(Row_Amt):
-            index = col + (row * Col_Amt)
+            index = column + (row * Col_Amt)
             DECODED += message[index]
  
     Char_Rem = Msg_Len % shift
