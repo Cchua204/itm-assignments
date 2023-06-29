@@ -296,9 +296,19 @@ def scytale_decipher(message, shift):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
 
-    DECODED = ''
-    for i in range(len(message)):
-        index = (i // (len(message) // shift)) + (i % (len(message) // shift)) * shift
-        DECODED += message[index]
+    DECODED = ""
+    Msg_Len = len(message)
+    Col_Amt = shift
+    Row_Amt = Msg_Len // shift
 
-    return str(DECODED.replace('_', '_'))
+    for col in range(Col_Amt):
+        for row in range(Row_Amt):
+            index = col + (row * Col_Amt)
+            DECODED += message[index]
+ 
+    Char_Rem = Msg_Len % shift
+    if Char_Rem > 0:
+        Begin_Index = Col_Amt * Row_Amt
+        DECODED += message[Begin_Index:]
+
+    return DECODED.replace("_", "_"))
