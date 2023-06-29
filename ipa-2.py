@@ -38,8 +38,8 @@ def shift_letter(letter, shift):
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     
-    if letter == ' ':
-        return ' '
+    if letter == " ":
+        return " "
     else:
             MY_DICTIO = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8, 'J': 9,
                    'K': 10, 'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16, 'R': 17, 'S': 18,
@@ -47,21 +47,21 @@ def shift_letter(letter, shift):
         
     letter_amount = len(MY_DICTIO)
 
-    Original_Value = None
+    Og_Value = None
     for key, value in MY_DICTIO.items():
-            if key == letter:
-                original_value = value
-                break
+        if key == letter:
+            Og_Value = value
+            break
 
-    Shifted_Value = (shift + Original_Value) % letter_amount
+    Shifted_Val = (shift + Og_Value) % letter_amount
 
-    Letter = None
+    Shifted_Let = None
     for key, value in MY_DICTIO.items():
-            if value == Shifted_Value:
-                Letter = key
-                break
+        if value == Shifted_Val:
+            Shifted_Let = key
+            break
 
-    return str(Letter)
+    return Shifted_Let
 
 def caesar_cipher(message, shift):
     '''Caesar Cipher.
