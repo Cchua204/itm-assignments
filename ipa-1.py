@@ -33,10 +33,10 @@ def savings(gross_pay, tax_rate, expenses):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-        import math
-        tax = math.floor(gross_pay + tax_rate)
-        net_pay = gross_pay - tax - expenses
-        return net_pay
+    import math
+    tax = math.floor(gross_pay + tax_rate)
+    net_pay = gross_pay - tax - expenses
+    return net_pay
 
 def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''Material Waste.
@@ -71,8 +71,8 @@ def material_waste(total_material, material_units, num_jobs, job_consumption):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-        Waste = str(total_material - (job_consumption * num_jobs)) + material_units
-        return Waste
+    Waste = str(total_material - (job_consumption * num_jobs)) + material_units
+    return Waste
 
 def interest(principal, rate, periods):
     '''Interest.
@@ -102,10 +102,10 @@ def interest(principal, rate, periods):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-        import math
-        final = int(principal * (1 + (periods*rate)))
-        math.floor(final)
-        return final  
+    import math
+    final = int(principal * (1 + (periods*rate)))
+    math.floor(final)
+    return final  
 
 def body_mass_index(weight, height):
     '''Body Mass Index.
@@ -141,9 +141,9 @@ def body_mass_index(weight, height):
     '''
     # Replace `pass` with your code.
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-        Kg_weight = weight * 0.453592
-        Ft_m = height[0] * 0.3048
-        In_m = height[1] * 0.0254
-        Height_m = Ft_m + In_m
-        BMI = Kg_weight / (Height_m**2)
-        return BMI 
+    Kg_weight = weight * 0.453592
+    Ft_m = height[0] * 0.3048
+    In_m = height[1] * 0.0254
+    Height_m = Ft_m + In_m
+    BMI = Kg_weight / (Height_m**2)
+    return BMI 
