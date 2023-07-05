@@ -311,4 +311,4 @@ def scytale_decipher(message, shift):
         Begin_Index = Col_Amt * Row_Amt
         DECODED += message[Begin_Index:]
 
-    return DECODED.replace("_", "_"))
+    return DECODED.replace("_", "_")
