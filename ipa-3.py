@@ -153,7 +153,7 @@ def eta(first_stop, second_stop, route_map):
     for keys in Leg_List[Index_Keys - 1:]:
         if second_stop in keys[1] and first_stop in keys[0]:
             Time = route_map[keys]["travel_time_mins"]
-            return Time
+            return int(Time)
         
         elif second_stop not in keys[1] and first_stop not in keys[0]:
             Time = Time + route_map[keys]["travel_time_mins"]
@@ -165,13 +165,13 @@ def eta(first_stop, second_stop, route_map):
              
         else:
             Time = Time + route_map[keys]["travel_time_mins"]
-            return Time
+            return int(Time)
    
         
     for keys in Leg_List:
         if second_stop in keys[1] and first_stop in keys[0]:
             Time = route_map[keys]["travel_time_mins"]
-            return Time
+            return int(Time)
         
         elif second_stop not in keys[1] and first_stop not in keys[0]:
             Time = Time + route_map[keys]["travel_time_mins"]
@@ -183,4 +183,4 @@ def eta(first_stop, second_stop, route_map):
              
         else:
             Time = Time + route_map[keys]["travel_time_mins"]
-            return Time
+            return int(Time)
