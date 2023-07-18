@@ -193,7 +193,7 @@ def vigenere_cipher(message, key):
     Encrypted_Msg = ""
     for V in range(len(message)):
         if message[V] == ' ':
-            encrypted_message += ' '
+            Encrypted_Msg += ' '
         else:
             Letter_Index = MY_DICTIO[message[V]]
             Key_Index = MY_DICTIO[Key_Extend[V]]
